@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://avatars1.githubusercontent.com/u/29598503?v=3&s=256" alt="[Project]">
+  <img src="https://dashboard.snapcraft.io/site_media/appmedia/2018/03/687474703a2f2f696d67732e786b63642e636f6d2f636f6d6963732f7461722e706e67.png" alt="[Project]">
   <br />
   [Project]
 </h1>
