@@ -70,11 +70,11 @@ If you have any questions, [post in the Snapcraft forum](https://forum.snapcraft
 
 ## The Snapcrafters
 
-| [![Michael Berner](https://gravatar.com/avatar/bc0bced65e963eb5c3a16cab8b004431/?s=128)](https://github.com/bernermic/cheat) |
+| [Michael Berner](https://github.com/bernermic/) |
+| [![cheat-snap](https://avatars3.githubusercontent.com/u/1283680?s=460&v=4)](https://github.com/bernermic/cheat) |
 | :---: |
 | [Chris Allen Lane](https://github.com/chrisallenlane/) |
 | [![cheat](https://avatars0.githubusercontent.com/u/623723?s=400&v=4)](https://github.com/chrisallenlane/cheat) |
---> 
 
 ## Upstream
 
