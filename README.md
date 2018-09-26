@@ -1,10 +1,10 @@
 <h1 align="center">
-  <img src="https://dashboard.snapcraft.io/site_media/appmedia/2018/03/687474703a2f2f696d67732e786b63642e636f6d2f636f6d6963732f7461722e706e67.png" alt="cheat-snap">
+  <img src="https://dashboard.snapcraft.io/site_media/appmedia/2018/03/687474703a2f2f696d67732e786b63642e636f6d2f636f6d6963732f7461722e706e67.png" alt="cheat">
   <br />
-  cheat-snap
+  cheat
 </h1>
 
-<p align="center"><b>This is the snap for cheat-snap</b>, <i>“This is a cheat-sheet tool for use in your bash terminal”</i>. It works on Ubuntu, Fedora, Debian, and other major Linux
+<p align="center"><b>This is the snap for cheat (based on https://github.com/chrisallenlane/cheat)</b>, <i>“This is a cheat-sheet tool for use in your bash terminal”</i>. It works on Ubuntu, Fedora, Debian, and other major Linux
 distributions.</p>
 
 <!-- Uncomment and modify this when you are provided a build status badge
@@ -21,7 +21,7 @@ distributions.</p>
 
 ## Install
 
-    sudo snap install cheat-snap
+    sudo snap install cheat
 
 <!-- Uncomment and modify this when your snap is available on the store
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/my-snap-name)
@@ -37,7 +37,7 @@ distributions.</p>
 Snapcrafters ([join us](https://forum.snapcraft.io/t/join-snapcrafters/1325)) 
 are working to land snap install documentation and
 the [snapcraft.yaml](https://github.com/snapcrafters/fork-and-rename-me/blob/master/snap/snapcraft.yaml)
-upstream so cheat-snap can authoritatively publish future releases.
+upstream so cheat can authoritatively publish future releases.
 
   - [x] Click the green "Use this template" button above to create a new repository based on this template
   - [x] Give the newly created repository a sensible name, like `godzilla-snap` if you're snapping the Godzilla software
@@ -49,7 +49,7 @@ upstream so cheat-snap can authoritatively publish future releases.
   - [x] Create a snap that runs in `devmode`
   - [x] Register the snap in the store, **using the preferred upstream name**
   - [x] Add a screenshot to this `README.md`
-  - [ ] Publish the `devmode` snap in the Snap store edge channel
+  - [ ] -Publish the `devmode` snap in the Snap store edge channel-
   - [x] Add install instructions to this `README.md`
   - [x] Update snap store metadata, icons and screenshots
   - [x] Convert the snap to `strict` confinement, or `classic` confinement if it qualifies
@@ -72,18 +72,15 @@ upstream so cheat-snap can authoritatively publish future releases.
 
 If you have any questions, [post in the Snapcraft forum](https://forum.snapcraft.io).
 
-<!--
 ## The Snapcrafters
 
-| [![Your Name](https://gravatar.com/avatar/bc0bced65e963eb5c3a16cab8b004431/?s=128)](https://github.com/yourname/) |
+| [![Michael Berner](https://gravatar.com/avatar/bc0bced65e963eb5c3a16cab8b004431/?s=128)](https://github.com/bernermic/cheat) |
 | :---: |
-| [Your Name](https://github.com/yourname/) |
+| [Chris Allen Lane](https://github.com/chrisallenlane/) |
+| [![cheat](https://avatars0.githubusercontent.com/u/623723?s=400&v=4)](https://github.com/chrisallenlane/cheat) |
 --> 
 
-<!-- Uncomment and modify this when you have upstream contacts
 ## Upstream
 
-| [![Upstream Name](https://gravatar.com/avatar/bc0bced65e963eb5c3a16cab8b004431?s=128)](https://github.com/upstreamname) |
 | :---: |
-| [Upstream Name](https://github.com/upstreamname) |
--->
+| [Cheat](https://github.com/chrisallenlane/cheat) |
