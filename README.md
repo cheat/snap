@@ -4,7 +4,7 @@
   cheat
 </h1>
 
-<p align="center"><b>This is the snap for cheat (based on https://github.com/chrisallenlane/cheat)</b>, <i>“This is a cheat-sheet tool for use in your bash terminal”</i>. It works on Ubuntu, Fedora, Debian, and other major Linux
+<p align="center"><b>This is the snap for cheat (based on https://github.com/chrisallenlane/cheat)</b>, <i>“cheat is a tool for use in your bash terminal”</i>. It works on Ubuntu, Fedora, Debian, and other major Linux
 distributions.</p>
 
 <!-- Uncomment and modify this when you are provided a build status badge
@@ -45,7 +45,7 @@ upstream so cheat can authoritatively publish future releases.
     - If you have already forked the Snapcrafter template to your account and want to create another snap, you'll need to use GitHub's [Import repository](https://github.com/new/import) feature because you can only fork a repository once.
   - [x] Rename the forked Snapcrafters template repository
   - [x] Update the description of the repository
-  - [x] Update logos and references to `cheat-snap` and `cheat`
+  - [x] Update logos and references to `cheat`
   - [x] Create a snap that runs in `devmode`
   - [x] Register the snap in the store, **using the preferred upstream name**
   - [x] Add a screenshot to this `README.md`
