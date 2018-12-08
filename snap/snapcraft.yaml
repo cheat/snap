@@ -1,5 +1,5 @@
 name: cheat # you probably want to 'snapcraft register <name>'
-version: 'v2.3.1'
+version: 'v2.3.1.1'
 summary: bash cheat sheet
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
