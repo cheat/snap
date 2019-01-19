@@ -21,11 +21,13 @@ distributions.</p>
 
 ## Install
 
-    sudo snap install cheat
+    $ sudo snap install cheat
 
 ### Get testing version
 
-    sudo snap install --channel=[candidate|beta|edge] cheat 
+    $ sudo snap install --channel=[candidate|beta|edge] cheat 
+
+    $ sudo snap refresh --channel=[candidate|beta|edge] cheat
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/cheat)
 
