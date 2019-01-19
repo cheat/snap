@@ -4,7 +4,7 @@
   cheat
 </h1>
 
-<p align="center"><b>This is the snap for cheat (based on https://github.com/chrisallenlane/cheat)</b>, <i>“cheat is a tool for use in your bash terminal”</i>. It works on Ubuntu, Fedora, Debian, and other major Linux
+<p align="center"><b>This is the snap for cheat (based on https://github.com/chrisallenlane/cheat)</b>, <i>“cheat allows you to create and view interactive cheatsheets on the command-line”</i>. It works on Ubuntu, Fedora, Debian, and other major Linux
 distributions.</p>
 
 <!-- Uncomment and modify this when you are provided a build status badge
@@ -22,6 +22,10 @@ distributions.</p>
 ## Install
 
     sudo snap install cheat
+
+### Get testing version
+
+    sudo snap install --channel=[candidate|beta|edge] cheat 
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/cheat)
 
@@ -72,11 +76,9 @@ If you have any questions, [post in the Snapcraft forum](https://forum.snapcraft
 
 | [Michael Berner](https://github.com/bernermic/) |
 | [![cheat-snap](https://avatars3.githubusercontent.com/u/1283680?s=460&v=4)](https://github.com/bernermic/cheat) |
-| :---: |
 | [Chris Allen Lane](https://github.com/chrisallenlane/) |
 | [![cheat](https://avatars0.githubusercontent.com/u/623723?s=400&v=4)](https://github.com/chrisallenlane/cheat) |
 
 ## Upstream
 
-| :---: |
 | [Cheat](https://github.com/chrisallenlane/cheat) |
