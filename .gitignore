@@ -2,6 +2,8 @@
 /parts/
 /stage/
 /prime/
+/snapcraft/
+/cheat/
 
 *.snap
 
