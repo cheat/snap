@@ -1,6 +1,6 @@
 name: cheat # you probably want to 'snapcraft register <name>'
-version: 'v2.3.1.1'
-summary: bash cheat sheet
+version: 'v2.3.1.build.5'
+summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
   It was designed to help remind *nix system administrators of options for commands 
@@ -15,13 +15,19 @@ apps:
     environment: 
       CHEAT_EDITOR: nano
     command: cheat
+    plugs: [home]
     
 parts:
   cheat:
     source: https://github.com/chrisallenlane/cheat.git
     plugin: python
+    python-version: python2
     python-packages:
+      - termcolor
       - docopt
       - pygments
     stage-packages: 
       - nano
+    override-build: |
+      git apply $SNAPCRAFT_STAGE/../patches/Bugfix-encoding-issue.patch
+      snapcraftctl build
