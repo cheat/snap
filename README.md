@@ -33,6 +33,21 @@ distributions.</p>
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
+## How to use it
+Usage: cheat [options] <cheatsheet>
+
+Options:
+  cheat <cheatsheet>      get <cheatsheet> content
+  cheat -e <cheatsheet>   edit <cheatsheet> / create new <cheatsheet>
+  cheat -s <keyword>      search in all <cheatsheet>s for <keyword>
+  cheat -l                list available <cheatsheet>s and their folders
+  cheat -d                list <cheatsheet>s directories
+  cheat -v                show upstream cheat version
+
+Examples:
+  cheat tar
+
+
 ## Remaining tasks
 <!-- Uncomment and modify this when you have a screenshot
 ![my-snap-name](screenshot.png?raw=true "my-snap-name")
