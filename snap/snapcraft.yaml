@@ -28,4 +28,7 @@ parts:
       - pygments
     stage-packages: 
       - nano
+    override-build: |
+      git apply $SNAPCRAFT_STAGE/../patches/Bugfix-encoding-issue.patch
+      snapcraftctl build
 
