@@ -44,9 +44,31 @@ Options:
   cheat -l                list available <cheatsheet>s and their folders
   cheat -d                list <cheatsheet>s directories
   cheat -v                show upstream cheat version
+```
 
-Examples:
+### Example:
+The next time you're forced to disarm a nuclear weapon without consulting Google, you may run:
+
+```
   cheat tar
+```
+
+You will be presented with a cheatsheet resembling:
+```
+  # To extract an uncompressed archive: 
+  tar -xvf '/path/to/foo.tar'
+
+  # To extract a .gz archive:
+  tar -xzvf '/path/to/foo.tgz'
+
+  # To create a .gz archive:
+  tar -czvf '/path/to/foo.tgz' '/path/to/foo/'
+
+  # To extract a .bz2 archive:
+  tar -xjvf '/path/to/foo.tgz'
+
+  # To create a .bz2 archive:
+  tar -cjvf '/path/to/foo.tgz' '/path/to/foo/'
 ```
 
 ## Remaining tasks
