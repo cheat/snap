@@ -34,6 +34,7 @@ distributions.</p>
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
 ## How to use it
+```
 Usage: cheat [options] <cheatsheet>
 
 Options:
@@ -46,7 +47,7 @@ Options:
 
 Examples:
   cheat tar
-
+```
 
 ## Remaining tasks
 <!-- Uncomment and modify this when you have a screenshot
