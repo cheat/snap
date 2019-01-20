@@ -1,21 +1,14 @@
 <h1 align="center">
-  <img src="https://dashboard.snapcraft.io/site_media/appmedia/2018/03/687474703a2f2f696d67732e786b63642e636f6d2f636f6d6963732f7461722e706e67.png" alt="cheat">
-  <br />
   cheat
 </h1>
 
-<p align="center"><b>This is the snap for cheat (based on https://github.com/chrisallenlane/cheat)</b>, <i>“cheat allows you to create and view interactive cheatsheets on the command-line”</i>. It works on Ubuntu, Fedora, Debian, and other major Linux
-distributions.</p>
-
-<!-- Uncomment and modify this when you are provided a build status badge
 <p align="center">
-<a href="https://build.snapcraft.io/user/snapcrafters/fork-and-rename-me"><img src="https://build.snapcraft.io/badge/snapcrafters/fork-and-rename-me.svg" alt="Snap Status"></a>
+  <b>This is the snap for cheat (based on https://github.com/chrisallenlane/cheat)</b>, 
+  <i>“cheat allows you to create and view interactive cheatsheets on the command-line”</i>. 
+  It works on Ubuntu, Fedora, Debian, and other major Linux distributions.
 </p>
--->
 
-<!-- Uncomment and modify this when you have a screenshot
-![my-snap-name](screenshot.png?raw=true "my-snap-name")
--->
+![cheat](https://dashboard.snapcraft.io/site_media/appmedia/2018/03/687474703a2f2f696d67732e786b63642e636f6d2f636f6d6963732f7461722e706e67.png "cheat")
 
 <p align="center">Published for <img src="https://raw.githubusercontent.com/anythingcodes/slack-emoji-for-techies/gh-pages/emoji/tux.png" align="top" width="24" /> with 💝 by Snapcrafters</p>
 
@@ -28,6 +21,16 @@ distributions.</p>
     $ sudo snap install --channel=[candidate|beta|edge] cheat 
 
     $ sudo snap refresh --channel=[candidate|beta|edge] cheat
+
+## Buildstatus for channel edge
+
+[![Snap Status](https://build.snapcraft.io/badge/bernermic/cheat.svg)](https://build.snapcraft.io/user/bernermic/cheat)
+
+### Test latest build
+
+    sudo snap install --edge cheat
+
+## Install from store
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/cheat)
 
@@ -72,9 +75,6 @@ You will be presented with a cheatsheet resembling:
 ```
 
 ## Remaining tasks
-<!-- Uncomment and modify this when you have a screenshot
-![my-snap-name](screenshot.png?raw=true "my-snap-name")
--->
 
 Snapcrafters ([join us](https://forum.snapcraft.io/t/join-snapcrafters/1325)) 
 are working to land snap install documentation and
@@ -98,7 +98,7 @@ upstream so cheat can authoritatively publish future releases.
   - [x] Post a call for testing on the [Snapcraft Forum](https://forum.snapcraft.io) - [Call for testing cheat](https://forum.snapcraft.io/t/call-for-testing-cheat)
   - [ ] Make a post in the [Snapcraft Forum](https://forum.snapcraft.io) asking for a transfer of the snap name from you to snapcrafters - [link]()
   - [ ] Ask a [Snapcrafters admin](https://github.com/orgs/snapcrafters/people?query=%20role%3Aowner) to fork your repo into github.com/snapcrafters, and configure the repo for automatic publishing into edge on commit
-  - [ ] Add the provided Snapcraft build badge to this `README.md`
+  - [x] Add the provided Snapcraft build badge to this `README.md`
   - [x] Publish the snap in the Snap store stable channel
   - [x] Update the install instructions in this `README.md`
   - [ ] Post an announcement in the [Snapcraft Forum](https://forum.snapcraft.io) - [link]()
