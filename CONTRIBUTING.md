@@ -12,7 +12,7 @@ In principal it is a good practice to create a snap in a clean environment and t
 
 * install multipass `snap install multipass`
 * create a new virtual env (disclaimer: this are my example values): `multipass launch -c 2 -d 15G -m 6G -n snappy x`
-* mount your checked out code into the vm `multipass mount /home/$USER/$your_repo/ snappy:/home/multipass/snap/`
+* mount your checked out code into the vm `multipass mount /home/$USER/$your_repo/ snappy:/home/multipass/snapdev`
 * open into your vm `multipass shell snappy` (and cd into snap folder)
 * install snapcraft `snap install snapcraft`
 * now you can start building your snap version of `cheat` via command `snapcraft`
