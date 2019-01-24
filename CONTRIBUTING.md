@@ -4,11 +4,28 @@ If you would like to contribute program functionality, please fork this reposito
 make your changes, and submit a pull request against the `master` branch.
 
 
+# Setup
 
-# How comes your change into the new snap?
+In principal it is a good practice to create a snap in a clean environment and the snapcraft team is providing a bunch of cool tools for that.
 
-If a PR is pushed into the `master` branch a build of the `cheat` snap will be scheduled on Ubuntu's Launchpad buildserver. 
-Info: The automatic build is added to the build pipeline and will be processed in order.
+## Preparation
+
+* install multipass `snap install multipass`
+* create a new virtual env (disclaimer: this are my example values): `multipass launch -c 2 -d 15G -m 6G -n snappy x`
+* mount your checked out code into the vm `multipass mount /home/$USER/$your_repo/ snappy:/home/multipass/snap/`
+* open into your vm `multipass shell snappy` (and cd into snap folder)
+* install snapcraft `snap install snapcraft`
+* now you can start building your snap version of `cheat` via command `snapcraft`
+
+## Building
+
+see: https://docs.snapcraft.io/debugging-building-snaps/6274
+
+# How comes your change into the snap store?
+
+If a PR is pushed into the `master` branch of this repo, a build of the `cheat` snap will be scheduled. 
+Info: The automatic build is added to a build pipeline (with other projects) and will be processed in order.
+You can see the status here: [buildstatus-for-channel-edge](https://github.com/bernermic/cheat#buildstatus-for-channel-edge)
 
 ## new version
 
