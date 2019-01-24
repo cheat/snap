@@ -1,5 +1,5 @@
 name: cheat # you probably want to 'snapcraft register <name>'
-version: 'v2.3.1.build.6'
+version: 'v2.3.1.build.7'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -31,4 +31,11 @@ parts:
     override-build: |
       git apply $SNAPCRAFT_STAGE/../patches/Bugfix-encoding-issue.patch
       snapcraftctl build
+    override-stage: |
+      snapcraftctl stage
+      echo "SNAPCRAFT_STAGE: $SNAPCRAFT_STAGE"
+      echo "SNAPCRAFT_PART_BUILD: $SNAPCRAFT_PART_BUILD"
+      echo "I am executed in: $(pwd)"
+      mkdir -p $SNAPCRAFT_STAGE/usr/share/cheat
+      cp $SNAPCRAFT_PART_BUILD/cheat/cheatsheets/* $SNAPCRAFT_STAGE/usr/share/cheat/
 
