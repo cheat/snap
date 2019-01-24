@@ -31,11 +31,12 @@ parts:
     override-build: |
       git apply $SNAPCRAFT_STAGE/../patches/Bugfix-encoding-issue.patch
       snapcraftctl build
-    override-stage: |
-      snapcraftctl stage
+    override-prime: |
+      snapcraftctl prime
+      echo "SNAPCRAFT_PRIME: $SNAPCRAFT_PRIME"
       echo "SNAPCRAFT_STAGE: $SNAPCRAFT_STAGE"
       echo "SNAPCRAFT_PART_BUILD: $SNAPCRAFT_PART_BUILD"
       echo "I am executed in: $(pwd)"
-      mkdir -p $SNAPCRAFT_STAGE/usr/share/cheat
-      cp $SNAPCRAFT_PART_BUILD/cheat/cheatsheets/* $SNAPCRAFT_STAGE/usr/share/cheat/
+      mkdir -p $SNAPCRAFT_PRIME/usr/share/cheat
+      cp $SNAPCRAFT_PART_BUILD/cheat/cheatsheets/* $SNAPCRAFT_PRIME/usr/share/cheat/
 
