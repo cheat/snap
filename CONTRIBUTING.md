@@ -4,7 +4,7 @@ If you would like to contribute program functionality, please fork this reposito
 make your changes, and submit a pull request against the `master` branch.
 
 
-# Setup
+# Setup development
 
 In principal it is a good practice to create a snap in a clean environment and the snapcraft team is providing a bunch of cool tools for that.
 
@@ -21,6 +21,21 @@ In principal it is a good practice to create a snap in a clean environment and t
 
 see: https://docs.snapcraft.io/debugging-building-snaps/6274
 
+## Testing
+
+Test the snapped version
+`snap install ./cheat_v2.3.1.build.7_amd64.snap --devmode`
+
+If you want to tinker with the files folders better use the primed result via:
+`snap try prime`
+this installs the content of prime as snap.
+
+## see wath the snap can see
+
+here you can check how the snap is seeing it's world (for example environment variables, file access ...)
+`sudo snap run --shell cheat`
+
+
 # How comes your change into the snap store?
 
 If a PR is pushed into the `master` branch of this repo, a build of the `cheat` snap will be scheduled. 
@@ -32,7 +47,7 @@ You can see the status here: [buildstatus-for-channel-edge](https://github.com/b
 A new version of the `cheat` snap will be published after a succeeded build to the Snapstore [https://snapcraft.io/cheat/releases](https://snapcraft.io/cheat/releases) into the latest/beta channel.
 After testing the snap will be promoted into latest/stable.
 
-# Test of new snap versions
+# Test of released snap versions
 
 For further information see: [https://docs.snapcraft.io/channels/](https://docs.snapcraft.io/channels/)
 
