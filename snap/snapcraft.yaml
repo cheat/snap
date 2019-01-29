@@ -5,7 +5,7 @@ description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
   It was designed to help remind *nix system administrators of options for commands 
   that they use frequently, but not frequently enough to remember.
-  Source comes from https://github.com/chrisallenlane
+  Source comes from https://github.com/cheat
 
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
@@ -21,8 +21,8 @@ apps:
     
 parts:
   cheat:
-    source: https://github.com/chrisallenlane/cheat.git
-    source-branch: dev
+    source: https://github.com/cheat/cheat.git
+    source-branch: master
     plugin: python
     python-version: python2
     python-packages:
