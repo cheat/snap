@@ -1,4 +1,4 @@
-name: cheat # you probably want to 'snapcraft register <name>'
+name: cheat
 version: 'v2.4.2.build.1'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
@@ -7,8 +7,8 @@ description: |
   that they use frequently, but not frequently enough to remember.
   Source comes from https://github.com/chrisallenlane
 
-grade: stable # must be 'stable' to release into candidate/stable channels
-confinement: strict # use 'strict' once you have the right plugs and slots
+grade: stable
+confinement: strict
 
 apps:
   cheat:
