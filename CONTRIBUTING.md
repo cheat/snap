@@ -23,7 +23,7 @@ see: https://docs.snapcraft.io/debugging-building-snaps/6274
 
 ## Testing
 
-Test the snapped version
+Test the snapped version (replace buildversion accordingly)
 `snap install ./cheat_v2.3.1.build.7_amd64.snap --devmode`
 
 If you want to tinker with the files folders better use the primed result via:
@@ -40,7 +40,7 @@ here you can check how the snap is seeing it's world (for example environment va
 
 If a PR is pushed into the `master` branch of this repo, a build of the `cheat` snap will be scheduled. 
 Info: The automatic build is added to a build pipeline (with other projects) and will be processed in order.
-You can see the status here: [buildstatus-for-channel-edge](https://github.com/bernermic/cheat#buildstatus-for-channel-edge)
+You can see the status here: [buildstatus-for-channel-edge](https://github.com/cheat/snap#buildstatus-for-channel-edge)
 
 ## new version
 
