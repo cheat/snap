@@ -24,7 +24,7 @@
 
 ## Buildstatus for channel edge
 
-[![Snap Status](https://build.snapcraft.io/badge/bernermic/cheat.svg)](https://build.snapcraft.io/user/bernermic/cheat)
+[![Snap Status](https://build.snapcraft.io/badge/cheat/snap.svg)](https://build.snapcraft.io/user/cheat/snap)
 
 ### Test latest build
 
@@ -115,7 +115,7 @@ If you have any questions, [post in the Snapcraft forum](https://forum.snapcraft
 ## The Snapcrafters
 
 | [Michael Berner](https://github.com/bernermic/) |
-| [![cheat-snap](https://avatars3.githubusercontent.com/u/1283680?s=460&v=4)](https://github.com/bernermic/cheat) |
+| [![cheat-snap](https://avatars3.githubusercontent.com/u/1283680?s=460&v=4)](https://github.com/cheat/snap) |
 | [Chris Allen Lane](https://github.com/chrisallenlane/) |
 | [![cheat](https://avatars0.githubusercontent.com/u/623723?s=400&v=4)](https://github.com/chrisallenlane/cheat) |
 
