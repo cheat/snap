@@ -41,16 +41,16 @@ parts:
 
   vim:
     source: https://github.com/vim/vim.git
-    plugin: make
-    override-build: |
-      make
-      make install DESTDIR=$SNAPCRAFT_PART_INSTALL
+    plugin: autotools
+    install-via: destdir
+    #make-install-var: DESTDIR=$SNAPCRAFT_PART_INSTALL
 
   nano:
     source: https://www.nano-editor.org/dist/v3/nano-3.2.tar.gz
     source-type: tar
-    plugin: make
-    override-build: |
-      ./configure
-      make
-      make install DESTDIR=$SNAPCRAFT_PART_INSTALL
+    plugin: autotools
+    install-via: destdir
+    #override-build: |
+    #  ./configure
+    #  make
+    #  make install DESTDIR=$SNAPCRAFT_PART_INSTALL
