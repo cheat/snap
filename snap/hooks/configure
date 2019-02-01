@@ -1,11 +1,25 @@
-#!/bin/sh -e
+#!/bin/bash -e
 
-editor="$(snapctl get CHEAT_EDITOR)"
-if [ -z "$editor" ] 
+editor="$(snapctl get editor)"
+if [ -z "$editor" ]
 then
     editor=nano
 fi
 
-export CHEAT_EDITOR=$editor
+if [ ! -e "$SNAP_USER_DATA/.bashrc" ]; then
+	echo "Create $SNAP_USER_DATA/.bashrc"
+	touch $SNAP_USER_DATA/.bashrc
+fi
 
-exit 0
+echo "Set editor config to: $editor"
+if grep -q "CHEAT_EDITOR=" $SNAP_USER_DATA/.bashrc; then
+	echo "Run sed"
+	sed -i "s/CHEAT_EDITOR.*/CHEAT_EDITOR=\"$editor\"/g" $SNAP_USER_DATA/.bashrc
+else
+	echo "Run cat"
+	cat >> $SNAP_USER_DATA/.bashrc <<-EOF
+		export CHEAT_EDITOR="$editor"
+	EOF
+fi
+
+source $SNAP_USER_DATA/.bashrc
