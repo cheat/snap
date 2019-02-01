@@ -22,4 +22,8 @@ else
 	EOF
 fi
 
+cat >> $SNAP_USER_DATA/.bashrc <<-EOF
+	export XDG_DATA_DIRS="$XDG_DATA_DIRS:/snap/cheat/current/usr/share"
+EOF
+
 source $SNAP_USER_DATA/.bashrc

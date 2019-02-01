@@ -1,5 +1,5 @@
 name: cheat
-version: 'v2.4.2.build.3'
+version: 'v2.4.2.build.4'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -23,6 +23,9 @@ apps:
 
   nano:
     command: nano
+    environment:
+      XDG_DATA_DIRS: "/snap/cheat/current/usr/share"
+      TERMINFO_DIRS: /snap/core/current/lib/terminfo
 
 hooks:
   configure:
@@ -44,8 +47,9 @@ parts:
     plugin: make
     override-build: |
       cd src
+      ./configure --prefix=$SNAPCRAFT_PART_INSTALL
       make
-      make install DESTDIR=$SNAPCRAFT_PART_INSTALL
+      make install
 
   nano:
     source: https://www.nano-editor.org/dist/latest/nano-3.2.tar.gz
