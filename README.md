@@ -22,7 +22,7 @@
 
     $ sudo snap refresh --channel=[candidate|beta|edge] cheat
 
-## Buildstatus for channel edge
+## Buildstatus
 
 [![Snap Status](https://build.snapcraft.io/badge/cheat/snap.svg)](https://build.snapcraft.io/user/cheat/snap)
 
