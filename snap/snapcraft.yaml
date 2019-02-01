@@ -12,7 +12,7 @@ confinement: strict
 
 apps:
   cheat:
-    environment: 
+    environment:
       CHEAT_PATH: "$SNAP/lib/python2.7/site-packages/usr/share/cheat/"
       PYTHONIOENCODING: 'utf-8'
     command: cheat
@@ -20,16 +20,6 @@ apps:
 
   vim:
     command: vim
-
-  nano:
-    command: nano
-    environment:
-      XDG_DATA_DIRS: "/snap/cheat/current/usr/share"
-      TERMINFO_DIRS: /snap/core/current/lib/terminfo
-
-hooks:
-  configure:
-    plugs: [home]
 
 parts:
   cheat:
@@ -41,6 +31,8 @@ parts:
       - termcolor
       - docopt
       - pygments
+    stage-packages:
+      - nano
 
   vim:
     source: https://github.com/vim/vim.git
