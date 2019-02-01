@@ -18,7 +18,11 @@ apps:
       PYTHONIOENCODING: 'utf-8'
     command: cheat
     plugs: [home]
-    
+
+hooks:
+  configure:
+    plugs: [home]
+
 parts:
   cheat:
     source: https://github.com/chrisallenlane/cheat.git
@@ -29,5 +33,5 @@ parts:
       - termcolor
       - docopt
       - pygments
-    stage-packages: 
+    stage-packages:
       - nano

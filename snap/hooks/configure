@@ -1,0 +1,11 @@
+#!/bin/sh -e
+
+editor="$(snapctl get CHEAT_EDITOR)"
+if [ -z "$editor" ] 
+then
+    editor=nano
+fi
+
+export CHEAT_EDITOR=$editor
+
+exit 0
