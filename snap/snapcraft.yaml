@@ -53,5 +53,5 @@ parts:
       ./configure --prefix=$SNAPCRAFT_PART_INSTALL
       make
       make install
-#    override-prime: |
-#      snapcraftctl prime
+    override-prime: |
+      snapcraftctl prime
