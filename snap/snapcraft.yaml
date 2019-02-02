@@ -19,6 +19,9 @@ apps:
     command: cheat
     plugs: [home]
 
+  vi:
+    command: vi
+
   vim:
     command: vim
 
@@ -35,6 +38,13 @@ parts:
       - termcolor
       - docopt
       - pygments
+
+  vi:
+    source: https://downloads.sourceforge.net/project/ex-vi/ex-vi/050325/ex-050325.tar.bz2
+    plugin: make
+    override-build: |
+      make
+      make install
 
   vim:
     source: https://github.com/vim/vim.git
