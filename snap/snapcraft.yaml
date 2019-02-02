@@ -21,6 +21,11 @@ apps:
   vim:
     command: vim
 
+  nano:
+    command: nano
+    environment:
+      PATH: "$SNAP/usr/share/nano"
+
 parts:
   cheat:
     source: https://github.com/chrisallenlane/cheat.git
