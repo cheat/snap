@@ -58,3 +58,5 @@ parts:
       make install
     override-prime: |
       snapcraftctl prime
+    build-packages:
+      - libncurses5-dev
