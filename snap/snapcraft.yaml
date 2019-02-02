@@ -6,6 +6,7 @@ description: |
   It was designed to help remind *nix system administrators of options for commands 
   that they use frequently, but not frequently enough to remember.
   Source comes from https://github.com/chrisallenlane
+  Bugreports go to: https://github.com/cheat/issues
 
 grade: stable
 confinement: strict
@@ -23,8 +24,6 @@ apps:
 
   nano:
     command: nano
-    environment:
-      PATH: "$SNAP/usr/share/nano"
 
 parts:
   cheat:
@@ -36,8 +35,6 @@ parts:
       - termcolor
       - docopt
       - pygments
-    stage-packages:
-      - nano
 
   vim:
     source: https://github.com/vim/vim.git
@@ -53,6 +50,8 @@ parts:
     source-type: tar
     plugin: make
     override-build: |
-      ./configure
+      ./configure --prefix=$SNAPCRAFT_PART_INSTALL
       make
-      make install DESTDIR=$SNAPCRAFT_PART_INSTALL
+      make install
+#    override-prime: |
+#      snapcraftctl prime
