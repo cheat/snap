@@ -1,5 +1,5 @@
 name: cheat
-version: 'v2.4.2.build.4'
+version: 'v2.5.0.build.1'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -30,10 +30,9 @@ apps:
 
 parts:
   cheat:
-    source: https://github.com/chrisallenlane/cheat.git
-    source-branch: refactor
+    source: https://github.com/cheat/cheat.git
     plugin: python
-    python-version: python2
+    python-version: python3
     python-packages:
       - termcolor
       - docopt
