@@ -32,7 +32,7 @@ parts:
   cheat:
     source: https://github.com/cheat/cheat.git
     plugin: python
-    python-version: python3
+    python-version: python2
     python-packages:
       - termcolor
       - docopt
