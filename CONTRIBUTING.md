@@ -1,5 +1,5 @@
 # Contributing
-============
+
 If you would like to contribute program functionality, please fork this repository, 
 make your changes, and submit a pull request against the `master` branch.
 
