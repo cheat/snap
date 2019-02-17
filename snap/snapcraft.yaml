@@ -1,11 +1,11 @@
 name: cheat
-version: 'v2.5.0.build.1'
+version: 'v2.5.1.build.1'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
   It was designed to help remind *nix system administrators of options for commands 
   that they use frequently, but not frequently enough to remember.
-  Source comes from https://github.com/chrisallenlane
+  Source comes from https://github.com/cheat
   Bugreports go to: https://github.com/cheat/issues
 
 grade: stable

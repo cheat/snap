@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-  <b>This is the snap for cheat (based on https://github.com/chrisallenlane/cheat)</b>, 
+  <b>This is the snap for cheat (based on https://github.com/cheat/cheat)</b>, 
   <i>“cheat allows you to create and view interactive cheatsheets on the command-line”</i>. 
   It works on Ubuntu, Fedora, Debian, and other major Linux distributions.
 </p>
@@ -117,8 +117,8 @@ If you have any questions, [post in the Snapcraft forum](https://forum.snapcraft
 | [Michael Berner](https://github.com/bernermic/) |
 | [![cheat-snap](https://avatars3.githubusercontent.com/u/1283680?s=460&v=4)](https://github.com/cheat/snap) |
 | [Chris Allen Lane](https://github.com/chrisallenlane/) |
-| [![cheat](https://avatars0.githubusercontent.com/u/623723?s=400&v=4)](https://github.com/chrisallenlane/cheat) |
+| [![cheat](https://avatars0.githubusercontent.com/u/623723?s=400&v=4)](https://github.com/cheat/cheat) |
 
 ## Upstream
 
-| [Cheat](https://github.com/chrisallenlane/cheat) |
+| [Cheat](https://github.com/cheat/cheat) |
