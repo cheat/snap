@@ -1,5 +1,5 @@
 name: cheat
-version: 'v2.5.1.build.5'
+version: 'v2.5.1.build.6'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -16,6 +16,8 @@ apps:
     environment:
       CHEAT_PATH: "$SNAP/lib/python2.7/site-packages/usr/share/cheat/"
       PYTHONIOENCODING: 'utf-8'
+      CHEAT_COLORS: "true"
+      CHEAT_HIGHLIGHT: "red"
     command: cheat
     plugs: [home]
 
@@ -48,7 +50,7 @@ parts:
       make install
 
   nano:
-    source: https://www.nano-editor.org/dist/latest/nano-4.0.tar.gz
+    source: https://www.nano-editor.org/dist/latest/nano-4.3.tar.gz
     source-type: tar
     plugin: make
     override-build: |
