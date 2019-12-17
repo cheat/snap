@@ -40,7 +40,8 @@ parts:
       curl -sSLO  https://github.com/cheat/cheat/releases/download/3.2.1/cheat-linux-amd64
       mv cheat-linux-amd64 cheat
       chmod +x cheat
-      curl -sSLO  https://github.com/cheat/cheatsheets/archive/master.zip 
+    build-packages:
+        - curl
 
   vim:
     source: https://github.com/vim/vim.git
