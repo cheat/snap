@@ -16,20 +16,12 @@ layout:
   /bin/vi:
     symlink: $SNAP/bin/vim
 
-plugs:
-  cheat-config:
-    interface: personal-files
-    read:
-      - $HOME/.config/cheat
-    write:
-      - $HOME/.config/cheat
-
 apps:
   cheat:
     environment:
       CHEAT_CONFIG_PATH: "$SNAP_DATA/usr/share/cheat/conf.yml"
     command: cheat
-    plugs: [home, cheat-config]
+    plugs: [home]
 
   vi:
     command: vim
@@ -39,10 +31,6 @@ apps:
 
   nano:
     command: nano
-
-architectures:
-  - build-on: amd64
-  - build-on: i386
 
 parts:
   cheat:
