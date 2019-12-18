@@ -1,5 +1,5 @@
 name: cheat
-version: 'v3.2.1.build.00'
+version: 'v3.2.1.build.1'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -31,6 +31,9 @@ apps:
 
   nano:
     command: nano
+
+architectures:
+  - build-on: amd64
 
 parts:
   cheat:
