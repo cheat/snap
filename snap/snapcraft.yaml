@@ -1,5 +1,5 @@
 name: cheat
-version: 'v3.2.1.build.0'
+version: 'v3.2.1.build.00'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -13,14 +13,15 @@ confinement: strict
 base: core18
 
 layout:
-  /bin/vi:
+  $SNAP/bin/vi:
     symlink: $SNAP/bin/vim
-  /etc/cheat/conf.yml:
-    bind-file: $SNAP_DATA/etc/cheat/conf.yml
 
 apps:
   cheat:
+    environment:
+      CHEAT_CONFIG_PATH: "$SNAP/etc/cheat/conf.yml"
     command: cheat
+    plugs: [home]
 
   vi:
     command: vim
@@ -31,6 +32,10 @@ apps:
   nano:
     command: nano
 
+architectures:
+  - build-on: amd64
+  - build-on: i386
+
 parts:
   cheat:
     plugin: dump
@@ -40,6 +45,41 @@ parts:
       curl -sSLO  https://github.com/cheat/cheat/releases/download/3.2.1/cheat-linux-amd64
       mv cheat-linux-amd64 cheat
       chmod +x cheat
+
+      mkdir -p $SNAPCRAFT_PRIME/etc/cheat
+      cat << EOF > $SNAPCRAFT_PRIME/etc/cheat/conf.yml
+      # The editor to use with 'cheat -e <sheet>'. Defaults to $EDITOR or $VISUAL.
+      editor: vim
+
+      # Should 'cheat' always colorize output?
+      colorize: true
+
+      # Which 'chroma' colorscheme should be applied to the output?
+      # Options are available here:
+      #   https://github.com/alecthomas/chroma/tree/master/styles
+      style: monokai
+
+      # Which 'chroma' "formatter" should be applied?
+      # One of: "terminal", "terminal256", "terminal16m"
+      formatter: terminal16m
+
+      cheatpaths:
+      # Paths that come earlier are considered to be the most "global", and will
+      # thus be overridden by more local cheatsheets. That being the case, you
+      # should probably list community cheatsheets first.
+      #
+      # Note that the paths and tags listed below are just examples. You may freely
+      # change them to suit your needs.
+      - name: community
+        path: $SNAP_DATA/.cheat/community
+        tags: [ community ]
+        readonly: true
+
+      - name: personal
+        path: $SNAP_USER_DATA/.cheat
+        tags: [ personal ]
+        readonly: false
+      EOF
     build-packages:
         - curl
 
