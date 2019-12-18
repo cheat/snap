@@ -15,11 +15,13 @@ base: core18
 layout:
   /bin/vi:
     symlink: $SNAP/bin/vim
+  /usr/share/cheat:
+    symlink: $SNAP/usr/share/cheat
 
 apps:
   cheat:
     environment:
-      CHEAT_CONFIG_PATH: "$SNAP_DATA/usr/share/cheat/conf.yml"
+      CHEAT_CONFIG_PATH: "$SNAP/usr/share/cheat/conf.yml"
     command: cheat
     plugs: [home]
 
@@ -53,6 +55,35 @@ parts:
       else
         git clone https://github.com/cheat/cheatsheets $SNAPCRAFT_PRIME/usr/share/cheat/cheatsheets/community
       fi
+
+      cat << EOF > $SNAPCRAFT_PRIME/usr/share/cheat/conf.yml
+      # The editor to use with 'cheat -e <sheet>'. Defaults to $EDITOR or $VISUAL.
+      editor: vim
+
+      # Should 'cheat' always colorize output?
+      colorize: true
+
+      # Which 'chroma' colorscheme should be applied to the output?
+      # Options are available here:
+      #   https://github.com/alecthomas/chroma/tree/master/styles
+      style: monokai
+
+      # Which 'chroma' "formatter" should be applied?
+      # One of: "terminal", "terminal256", "terminal16m"
+      formatter: terminal16m
+
+      cheatpaths:
+      # Paths that come earlier are considered to be the most "global", and will
+      # thus be overridden by more local cheatsheets. That being the case, you
+      # should probably list community cheatsheets first.
+      #
+      # Note that the paths and tags listed below are just examples. You may freely
+      # change them to suit your needs.
+        - name: community
+          path: /usr/share/cheat/cheatsheets/community
+          tags: [ community ]
+          readonly: true
+      EOF
     build-packages:
         - curl
 
