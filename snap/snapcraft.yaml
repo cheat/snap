@@ -13,8 +13,6 @@ confinement: strict
 base: core18
 
 layout:
-  /usr/bin/vi:
-    symlink: $SNAP/bin/vim
   /bin/vi:
     symlink: $SNAP/bin/vim
   /usr/share/cheat:
@@ -28,6 +26,10 @@ apps:
       CHEAT_CONFIG_PATH: "/etc/cheat/conf.yml"
     command: cheat
     plugs: [home]
+
+  cheatsheet-setup:
+    command: mkdir -p $SNAP_USER_DATA/cheat/cheatsheets/personal
+    daemon: oneshot
 
   vi:
     command: vim
