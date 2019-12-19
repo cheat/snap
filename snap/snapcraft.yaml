@@ -28,7 +28,10 @@ apps:
     plugs: [home]
 
   cheatsheet-setup:
-    command: mkdir -p $SNAP_USER_DATA/cheat/cheatsheets/personal
+    command: |
+      echo "Prepare cheatsheets directory"
+      mkdir -p $SNAP_USER_DATA/cheat/cheatsheets/personal
+      ls -la $SNAP_USER_DATA/cheat/cheatsheets/personal
     daemon: oneshot
 
   vi:
