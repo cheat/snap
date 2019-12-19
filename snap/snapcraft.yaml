@@ -60,9 +60,6 @@ parts:
 
       mkdir -p $SNAPCRAFT_PRIME/etc/cheat/
       cat << EOF > $SNAPCRAFT_PRIME/etc/cheat/conf.yml
-      # The editor to use with 'cheat -e <sheet>'. Defaults to $EDITOR or $VISUAL.
-      editor: vim
-
       # Should 'cheat' always colorize output?
       colorize: true
 
