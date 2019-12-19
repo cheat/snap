@@ -13,6 +13,8 @@ confinement: strict
 base: core18
 
 layout:
+  /usr/bin/vi:
+    symlink: $SNAP/bin/vim
   /bin/vi:
     symlink: $SNAP/bin/vim
   /usr/share/cheat:
