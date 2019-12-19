@@ -3,9 +3,7 @@
 </h1>
 
 <p align="center">
-  <b>This is the snap for cheat (based on https://github.com/cheat/cheat)</b>, 
-  <i>“cheat allows you to create and view interactive cheatsheets on the command-line”</i>. 
-  It works on Ubuntu, Fedora, Debian, and other major Linux distributions.
+  <b>This is the snap for cheat (based on https://github.com/cheat/cheat)</b>
 </p>
 
 ![cheat](https://dashboard.snapcraft.io/site_media/appmedia/2018/03/687474703a2f2f696d67732e786b63642e636f6d2f636f6d6963732f7461722e706e67.png "cheat")
@@ -14,13 +12,13 @@
 
 ## Install
 
-    $ sudo snap install cheat
+    $ snap install cheat
 
 ### Get testing version
 
-    $ sudo snap install --channel=[candidate|beta|edge] cheat 
+    $ snap install --channel=[candidate|beta|edge] cheat 
 
-    $ sudo snap refresh --channel=[candidate|beta|edge] cheat
+    $ snap refresh --channel=[candidate|beta|edge] cheat
 
 ## Buildstatus
 
@@ -28,7 +26,7 @@
 
 ### Test latest build
 
-    sudo snap install --edge cheat
+    $ snap install --edge cheat
 
 ## Install from store
 
@@ -38,22 +36,14 @@
 
 ## How to use it
 ```
-Usage: cheat [options] <cheatsheet>
-
-Options:
-  cheat <cheatsheet>      get <cheatsheet> content
-  cheat -e <cheatsheet>   edit <cheatsheet> / create new <cheatsheet>
-  cheat -s <keyword>      search in all <cheatsheet>s for <keyword>
-  cheat -l                list available <cheatsheet>s and their folders
-  cheat -d                list <cheatsheet>s directories
-  cheat -v                show upstream cheat version
+  $ cheat --help
 ```
 
 ### Example:
 The next time you're forced to disarm a nuclear weapon without consulting Google, you may run:
 
 ```
-  cheat tar
+  $ cheat tar
 ```
 
 You will be presented with a cheatsheet resembling:
