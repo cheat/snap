@@ -17,11 +17,13 @@ layout:
     symlink: $SNAP/bin/vim
   /usr/share/cheat:
     symlink: $SNAP/usr/share/cheat
+  /etc/cheat/conf.yml:
+    bind-file: $SNAP/etc/cheat/conf.yml
 
 apps:
   cheat:
     environment:
-      CHEAT_CONFIG_PATH: "$SNAP/usr/share/cheat/conf.yml"
+      CHEAT_CONFIG_PATH: "/etc/cheat/conf.yml"
     command: cheat
     plugs: [home]
 
@@ -56,7 +58,8 @@ parts:
         git clone https://github.com/cheat/cheatsheets $SNAPCRAFT_PRIME/usr/share/cheat/cheatsheets/community
       fi
 
-      cat << EOF > $SNAPCRAFT_PRIME/usr/share/cheat/conf.yml
+      mkdir -p $SNAPCRAFT_PRIME/etc/cheat/
+      cat << EOF > $SNAPCRAFT_PRIME/etc/cheat/conf.yml
       # The editor to use with 'cheat -e <sheet>'. Defaults to $EDITOR or $VISUAL.
       editor: vim
 
