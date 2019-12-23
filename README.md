@@ -13,6 +13,7 @@
 ## Install
 
     $ snap install cheat
+    $ cheat.cheatsheet-setup
 
 ### Get testing version
 
@@ -35,34 +36,8 @@
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
 ## How to use it
-```
-  $ cheat --help
-```
+[See upstream README](https://github.com/cheat/cheat#example)
 
-### Example:
-The next time you're forced to disarm a nuclear weapon without consulting Google, you may run:
-
-```
-  $ cheat tar
-```
-
-You will be presented with a cheatsheet resembling:
-```
-  # To extract an uncompressed archive: 
-  tar -xvf '/path/to/foo.tar'
-
-  # To extract a .gz archive:
-  tar -xzvf '/path/to/foo.tgz'
-
-  # To create a .gz archive:
-  tar -czvf '/path/to/foo.tgz' '/path/to/foo/'
-
-  # To extract a .bz2 archive:
-  tar -xjvf '/path/to/foo.tgz'
-
-  # To create a .bz2 archive:
-  tar -cjvf '/path/to/foo.tgz' '/path/to/foo/'
-```
 
 ## Remaining tasks
 

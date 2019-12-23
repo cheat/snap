@@ -6,7 +6,10 @@ description: |
   It was designed to help remind *nix system administrators of options for commands 
   that they use frequently, but not frequently enough to remember.
   Source comes from https://github.com/cheat
-  Bugreports go to: https://github.com/cheat/issues
+  Bugreports for upstream go to: https://github.com/cheat/cheat/issues
+  Bugreports for snap go to: https://github.com/cheat/snap/issues
+
+  To use personal cheatsheets run `cheat.cheatsheet-setup`
 
 grade: stable
 confinement: strict
@@ -28,7 +31,7 @@ apps:
     plugs: [home]
 
   cheatsheet-setup:
-    command: mkdir -p $SNAP_USER_DATA/cheat/cheatsheets/personal
+    command: mkdir -p $SNAP_USER_DATA/cheat
 
   vi:
     command: vim
