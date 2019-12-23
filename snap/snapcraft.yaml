@@ -1,5 +1,5 @@
 name: cheat
-version: 'v3.2.1.build.1'
+version: 'v3.2.1.build.2'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -39,19 +39,20 @@ apps:
   nano:
     command: nano
 
-architectures:
-  - build-on: amd64
-
 parts:
   cheat:
-    plugin: dump
-    source: .
-    override-pull: |
-      cd "$SNAPCRAFT_PART_SRC"
-      curl -sSLO  https://github.com/cheat/cheat/releases/download/3.2.1/cheat-linux-amd64
-      mv cheat-linux-amd64 cheat
-      chmod +x cheat
-
+    plugin: go
+    go-importpath: github.com/cheat/cheat
+    source: https://github.com/cheat/cheat
+    source-type: git
+    override-build: |
+      export GOPATH=$(realpath ../go)
+      mkdir -p ${SNAPCRAFT_PART_INSTALL}/bin/
+      cd ${GOPATH}/src/github.com/cheat/cheat
+      cd cmd/cheat
+      go clean && go generate
+      go build -mod vendor -o ${SNAPCRAFT_PART_INSTALL}/bin/cheat .
+      
       mkdir -p $SNAPCRAFT_PRIME/usr/share/cheat/cheatsheets
       if [ -d $SNAPCRAFT_PRIME/usr/share/cheat/cheatsheets/community ]; then
         cd $SNAPCRAFT_PRIME/usr/share/cheat/cheatsheets/community
@@ -93,8 +94,6 @@ parts:
           tags: [ personal ]
           readonly: false
       EOF
-    build-packages:
-        - curl
 
   vim:
     source: https://github.com/vim/vim.git
