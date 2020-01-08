@@ -16,8 +16,6 @@ confinement: strict
 base: core18
 
 layout:
-  /bin/vi:
-    symlink: $SNAP/bin/vim
   /usr/share/cheat:
     symlink: $SNAP/usr/share/cheat
   /etc/cheat/conf.yml:
