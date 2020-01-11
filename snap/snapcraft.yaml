@@ -49,7 +49,7 @@ parts:
       export GOPATH=$(realpath ../go)
       mkdir -p ${SNAPCRAFT_PART_INSTALL}/bin/
       cd ${GOPATH}/src/github.com/cheat/cheat
-      sed -i 's/no editor set/configure EDITOR or VISUAL (see: https:\/\/help.ubuntu.com\/community\/EnvironmentVariables)/g' internal/config/config.go
+      sed -i 's/no editor set/configure EDITOR or VISUAL see: https:\/\/help.ubuntu.com\/community\/EnvironmentVariables/g' internal/config/config.go
       sed -i 's/failed to resolve symlink: %s, %v/run cheat.cheatsheet-setup to fix this : %s, %v/g' internal/config/config.go
       sed -i '1s/^/Setup:\n/' cmd/cheat/docopt.txt
       sed -i '1a \ \ cheat.cheatsheet-setup' cmd/cheat/docopt.txt
@@ -113,7 +113,7 @@ parts:
       make install
 
   nano:
-    source: https://www.nano-editor.org/dist/latest/nano-4.6.tar.gz
+    source: https://www.nano-editor.org/dist/latest/nano-4.7.tar.gz
     source-type: tar
     plugin: make
     override-build: |
