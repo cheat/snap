@@ -51,6 +51,8 @@ parts:
       cd ${GOPATH}/src/github.com/cheat/cheat
       sed -i 's/no editor set/configure EDITOR or VISUAL (see: https:\/\/help.ubuntu.com\/community\/EnvironmentVariables)/g' internal/config/config.go
       sed -i 's/failed to resolve symlink: %s, %v/run cheat.cheatsheet-setup to fix this : %s, %v/g' internal/config/config.go
+      sed -i 's/To initialize a config file:/To create your personal cheatsheet run:/g' cmd/cheat/str_usage.go
+      sed -i 's/mkdir -p ~\/.config\/cheat && cheat --init > ~\/.config\/cheat\/conf.yml/run cheat.cheatsheet-setup/g' cmd/cheat/str_usage.go
       cd cmd/cheat
       go clean && go generate
       go build -mod vendor -o ${SNAPCRAFT_PART_INSTALL}/bin/cheat .
