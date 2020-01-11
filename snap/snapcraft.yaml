@@ -1,5 +1,5 @@
 name: cheat
-version: 'v3.2.1.build.2'
+version: 'v3.2.1.build.3'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -26,7 +26,6 @@ apps:
     environment:
       CHEAT_CONFIG_PATH: "/etc/cheat/conf.yml"
     command: cheat
-    plugs: [home]
 
   cheatsheet-setup:
     command: mkdir -p $SNAP_USER_DATA/.cheat
@@ -50,6 +49,8 @@ parts:
       export GOPATH=$(realpath ../go)
       mkdir -p ${SNAPCRAFT_PART_INSTALL}/bin/
       cd ${GOPATH}/src/github.com/cheat/cheat
+      sed -i 's/no editor set/configure EDITOR or VISUAL (see: https:\/\/help.ubuntu.com\/community\/EnvironmentVariables)/g' internal/config/config.go
+      sed -i 's/failed to resolve symlink: %s, %v/run cheat.cheatsheet-setup to fix this : %s, %v/g' internal/config/config.go
       cd cmd/cheat
       go clean && go generate
       go build -mod vendor -o ${SNAPCRAFT_PART_INSTALL}/bin/cheat .
