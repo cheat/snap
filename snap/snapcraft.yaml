@@ -1,5 +1,5 @@
 name: cheat
-version: 'v3.2.1.build.3'
+version: 'v3.4.1.build.0'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -50,16 +50,15 @@ parts:
       mkdir -p ${SNAPCRAFT_PART_INSTALL}/bin/
       cd ${GOPATH}/src/github.com/cheat/cheat
       sed -i 's/no editor set/configure EDITOR or VISUAL see: https:\/\/help.ubuntu.com\/community\/EnvironmentVariables/g' internal/config/config.go
-      sed -i 's/failed to resolve symlink: %s, %v/run cheat.cheatsheet-setup to fix this : %s, %v/g' internal/config/config.go
+      sed -i 's/failed to resolve symlink: %s: %v/run cheat.cheatsheet-setup to fix this : %s, %v/g' internal/config/config.go
       sed -i '1s/^/Setup:\n/' cmd/cheat/docopt.txt
       sed -i '1a \ \ cheat.cheatsheet-setup' cmd/cheat/docopt.txt
       sed -i '2a \ ' cmd/cheat/docopt.txt
       sed -i 's/To initialize a config file:/To create your personal cheatsheet run:/g' cmd/cheat/docopt.txt
       sed -i 's/mkdir -p ~\/.config\/cheat && cheat --init > ~\/.config\/cheat\/conf.yml/cheat.cheatsheet-setup/g' cmd/cheat/docopt.txt
-      cd cmd/cheat
-      go clean && go generate
-      go build -mod vendor -o ${SNAPCRAFT_PART_INSTALL}/bin/cheat .
-      
+      make build
+      cp /root/parts/cheat/src/dist/cheat ${SNAPCRAFT_PART_INSTALL}/bin/
+
       mkdir -p $SNAPCRAFT_PRIME/usr/share/cheat/cheatsheets
       if [ -d $SNAPCRAFT_PRIME/usr/share/cheat/cheatsheets/community ]; then
         cd $SNAPCRAFT_PRIME/usr/share/cheat/cheatsheets/community
