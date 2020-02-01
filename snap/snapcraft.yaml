@@ -104,23 +104,12 @@ parts:
   vim:
     source: https://github.com/vim/vim.git
     source-depth: 1
-    plugin: make
-    override-build: |
-      cd src
-      ./configure --prefix=$SNAPCRAFT_PART_INSTALL
-      make
-      make install
+    plugin: autotools
 
   nano:
     source: https://www.nano-editor.org/dist/latest/nano-4.7.tar.gz
     source-type: tar
-    plugin: make
-    override-build: |
-      ./configure --prefix=$SNAPCRAFT_PART_INSTALL
-      make
-      make install
-    override-prime: |
-      snapcraftctl prime
+    plugin: autotools
     build-packages:
       - gcc
       - libncurses5-dev
