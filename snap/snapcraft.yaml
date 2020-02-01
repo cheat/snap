@@ -57,7 +57,7 @@ parts:
       sed -i 's/To initialize a config file:/To create your personal cheatsheet run:/g' cmd/cheat/docopt.txt
       sed -i 's/mkdir -p ~\/.config\/cheat && cheat --init > ~\/.config\/cheat\/conf.yml/cheat.cheatsheet-setup/g' cmd/cheat/docopt.txt
       make build
-      cp /root/parts/cheat/src/dist/cheat ${SNAPCRAFT_PART_INSTALL}/bin/
+      cp dist/cheat ${SNAPCRAFT_PART_INSTALL}/bin/
 
       mkdir -p $SNAPCRAFT_PRIME/usr/share/cheat/cheatsheets
       if [ -d $SNAPCRAFT_PRIME/usr/share/cheat/cheatsheets/community ]; then
