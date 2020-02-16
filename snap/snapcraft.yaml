@@ -1,5 +1,5 @@
 name: cheat
-version: 'v3.5.1.build.0'
+version: 'v3.6.0.build.0'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
