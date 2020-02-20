@@ -1,5 +1,5 @@
 name: cheat
-version: 'v3.6.0.build.0'
+version: 'v3.6.0.build.1'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -18,14 +18,11 @@ base: core18
 layout:
   /usr/share/cheat:
     symlink: $SNAP/usr/share/cheat
-  /etc/cheat/conf.yml:
-    bind-file: $SNAP/etc/cheat/conf.yml
 
 apps:
   cheat:
-    environment:
-      CHEAT_CONFIG_PATH: "/etc/cheat/conf.yml"
     command: cheat
+    plugs: [home]
 
   cheatsheet-setup:
     command: mkdir -p $SNAP_USER_DATA/.cheat
@@ -107,7 +104,7 @@ parts:
     plugin: autotools
 
   nano:
-    source: https://www.nano-editor.org/dist/latest/nano-4.7.tar.gz
+    source: https://www.nano-editor.org/dist/latest/nano-4.8.tar.gz
     source-type: tar
     plugin: autotools
     build-packages:
