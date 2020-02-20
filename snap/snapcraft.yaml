@@ -104,7 +104,7 @@ parts:
     plugin: autotools
 
   nano:
-    source: https://www.nano-editor.org/dist/latest/nano-4.8.tar.gz
+    source: https://www.nano-editor.org/dist/latest/nano-4.7.tar.gz
     source-type: tar
     plugin: autotools
     build-packages:
