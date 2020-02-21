@@ -18,6 +18,8 @@ base: core18
 layout:
   /usr/share/cheat:
     symlink: $SNAP/usr/share/cheat
+  /etc/nanorc:
+    bind-file: $SNAP/etc/nanorc
 
 apps:
   cheat:
@@ -66,6 +68,8 @@ parts:
       fi
 
       mkdir -p $SNAPCRAFT_PRIME/etc/cheat/
+      touch $SNAPCRAFT_PRIME/etc/nanorc
+
       cat << EOF > $SNAPCRAFT_PRIME/etc/cheat/conf.yml
       # Should 'cheat' always colorize output?
       colorize: true
@@ -104,7 +108,7 @@ parts:
     plugin: autotools
 
   nano:
-    source: https://www.nano-editor.org/dist/latest/nano-4.7.tar.gz
+    source: https://www.nano-editor.org/dist/latest/nano-4.8.tar.gz
     source-type: tar
     plugin: autotools
     build-packages:
