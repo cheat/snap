@@ -1,5 +1,5 @@
 name: cheat
-version: 'v3.6.0.build.1'
+version: 'v3.7.1.build.0'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -8,8 +8,6 @@ description: |
   Source comes from https://github.com/cheat
   Bugreports for upstream go to: https://github.com/cheat/cheat/issues
   Bugreports for snap go to: https://github.com/cheat/snap/issues
-
-  To use personal cheatsheets run `cheat.cheatsheet-setup`
 
 grade: stable
 confinement: strict
@@ -25,9 +23,6 @@ apps:
   cheat:
     command: cheat
     plugs: [home]
-
-  cheatsheet-setup:
-    command: mkdir -p $SNAP_USER_DATA/.cheat
 
   vi:
     command: vim
@@ -47,60 +42,12 @@ parts:
     override-build: |
       export GOPATH=$(realpath ../go)
       mkdir -p ${SNAPCRAFT_PART_INSTALL}/bin/
-      cd ${GOPATH}/src/github.com/cheat/cheat
-      sed -i 's/no editor set/configure EDITOR or VISUAL see: https:\/\/help.ubuntu.com\/community\/EnvironmentVariables/g' internal/config/config.go
-      sed -i 's/failed to resolve symlink: %s: %v/run cheat.cheatsheet-setup to fix this : %s, %v/g' internal/config/config.go
-      sed -i '1s/^/Setup:\n/' cmd/cheat/docopt.txt
-      sed -i '1a \ \ cheat.cheatsheet-setup' cmd/cheat/docopt.txt
-      sed -i '2a \ ' cmd/cheat/docopt.txt
-      sed -i 's/To initialize a config file:/To create your personal cheatsheet run:/g' cmd/cheat/docopt.txt
-      sed -i 's/mkdir -p ~\/.config\/cheat && cheat --init > ~\/.config\/cheat\/conf.yml/cheat.cheatsheet-setup/g' cmd/cheat/docopt.txt
+      cd ${SNAPCRAFT_PART_SRC}
       make build
       cp dist/cheat ${SNAPCRAFT_PART_INSTALL}/bin/
 
-      mkdir -p $SNAPCRAFT_PRIME/usr/share/cheat/cheatsheets
-      if [ -d $SNAPCRAFT_PRIME/usr/share/cheat/cheatsheets/community ]; then
-        cd $SNAPCRAFT_PRIME/usr/share/cheat/cheatsheets/community
-        git fetch
-        git pull
-      else
-        git clone https://github.com/cheat/cheatsheets $SNAPCRAFT_PRIME/usr/share/cheat/cheatsheets/community
-      fi
-
-      mkdir -p $SNAPCRAFT_PRIME/etc/cheat/
+      mkdir -p $SNAPCRAFT_PRIME/etc/
       touch $SNAPCRAFT_PRIME/etc/nanorc
-
-      cat << EOF > $SNAPCRAFT_PRIME/etc/cheat/conf.yml
-      # Should 'cheat' always colorize output?
-      colorize: true
-
-      # Which 'chroma' colorscheme should be applied to the output?
-      # Options are available here:
-      #   https://github.com/alecthomas/chroma/tree/master/styles
-      style: monokai
-
-      # Which 'chroma' "formatter" should be applied?
-      # One of: "terminal", "terminal256", "terminal16m"
-      formatter: terminal16m
-
-      cheatpaths:
-      # Paths that come earlier are considered to be the most "global", and will
-      # thus be overridden by more local cheatsheets. That being the case, you
-      # should probably list community cheatsheets first.
-      #
-      # Note that the paths and tags listed below are just examples. You may freely
-      # change them to suit your needs.
-        - name: community
-          path: /usr/share/cheat/cheatsheets/community
-          tags: [ community ]
-          readonly: true
-      # If you have personalized cheatsheets, list them last. They will take
-      # precedence over the more global cheatsheets.
-        - name: personal
-          path: ~/.cheat
-          tags: [ personal ]
-          readonly: false
-      EOF
 
   vim:
     source: https://github.com/vim/vim.git
