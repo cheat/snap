@@ -44,7 +44,10 @@ parts:
     go-importpath: github.com/cheat/cheat
     source: https://github.com/cheat/cheat
     source-type: git
+    build-packages:
+      - pandoc
     stage-packages:
+      - libcurl4
       - git
     override-build: |
       export GOPATH=$(realpath ../go)
