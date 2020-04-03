@@ -47,13 +47,13 @@ parts:
     build-packages:
       - pandoc
     stage-packages:
-      - libcurl4
+      - ssh
       - git
     override-build: |
       export GOPATH=$(realpath ../go)
       mkdir -p ${SNAPCRAFT_PART_INSTALL}/bin/
       cd ${SNAPCRAFT_PART_SRC}
-      sed -i 's/https:\/\/github.com/git:\/\/github.com/g' internal/installer/clone.go
+      sed -i 's/https:\/\/github.com\//git@github.com:/g' internal/installer/clone.go
       make build
       cp dist/cheat ${SNAPCRAFT_PART_INSTALL}/bin/
 
