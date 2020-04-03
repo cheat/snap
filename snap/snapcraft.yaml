@@ -28,6 +28,8 @@ apps:
       - home
       - network
       - avahi-observe
+    environment:
+      HOME: "$SNAP_USER_COMMON"
 
   vi:
     command: vim
