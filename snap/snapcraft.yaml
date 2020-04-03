@@ -1,5 +1,5 @@
 name: cheat
-version: 'v3.8.0.build.2'
+version: 'v3.8.0.build.3'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -24,7 +24,10 @@ layout:
 apps:
   cheat:
     command: cheat
-    plugs: [home]
+    plugs:
+      - home
+      - network
+      - avahi-observe
 
   vi:
     command: vim
@@ -35,9 +38,6 @@ apps:
   nano:
     command: nano
 
-  git:
-    command: git
-
 parts:
   cheat:
     plugin: go
@@ -47,19 +47,17 @@ parts:
     build-packages:
       - pandoc
     stage-packages:
-      - ssh
       - git
     override-build: |
       export GOPATH=$(realpath ../go)
       mkdir -p ${SNAPCRAFT_PART_INSTALL}/bin/
       cd ${SNAPCRAFT_PART_SRC}
-      sed -i 's/https:\/\/github.com\//git@github.com:/g' internal/installer/clone.go
+      # atm snap version does not support https
+      sed -i 's/https:\/\/github.com/git:\/\/github.com/g' internal/installer/clone.go
       make build
       cp dist/cheat ${SNAPCRAFT_PART_INSTALL}/bin/
 
-      mkdir -p $SNAPCRAFT_PRIME/etc/
-      touch $SNAPCRAFT_PRIME/etc/nanorc
-
+      # nessesary for working git
       mkdir -p $SNAPCRAFT_PRIME/usr/share/git-core/templates
 
   vim:
@@ -74,3 +72,8 @@ parts:
     build-packages:
       - gcc
       - libncurses5-dev
+    override-build: |
+      snapcraftctl build
+      mkdir -p $SNAPCRAFT_PRIME/etc/
+      touch $SNAPCRAFT_PRIME/etc/nanorc
+
