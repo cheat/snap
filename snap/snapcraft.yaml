@@ -1,5 +1,5 @@
 name: cheat
-version: 'v3.8.0.build.4'
+version: 'v3.8.0.build.5'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -40,6 +40,9 @@ apps:
   nano:
     command: nano
 
+  update:
+    command: update
+
 parts:
   cheat:
     plugin: go
@@ -56,11 +59,20 @@ parts:
       cd ${SNAPCRAFT_PART_SRC}
       # atm snap version does not support https
       sed -i 's/https:\/\/github.com/git:\/\/github.com/g' internal/installer/clone.go
+      # adding some customized documentation (until https://github.com/cheat/cheat/issues/552 is resolved)
+      sed -i '3aUpdate community cheatsheets via: cheat.update' cmd/cheat/docopt.txt
       make build
       cp dist/cheat ${SNAPCRAFT_PART_INSTALL}/bin/
 
       # nessesary for working git
       mkdir -p $SNAPCRAFT_PRIME/usr/share/git-core/templates
+
+  update:
+    plugin: dump
+    source: scripts/git
+    source-type: local
+    organize:
+      "*": bin/
 
   vim:
     source: https://github.com/vim/vim.git
