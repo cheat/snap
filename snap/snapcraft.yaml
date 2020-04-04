@@ -42,6 +42,9 @@ apps:
 
   update:
     command: update
+    plugs:
+      - network
+      - avahi-observe
 
 parts:
   cheat:
@@ -60,7 +63,7 @@ parts:
       # atm snap version does not support https
       sed -i 's/https:\/\/github.com/git:\/\/github.com/g' internal/installer/clone.go
       # adding some customized documentation (until https://github.com/cheat/cheat/issues/552 is resolved)
-      sed -i '3aUpdate community cheatsheets via: cheat.update' cmd/cheat/docopt.txt
+      sed -i '3aUpdate community cheatsheets via:\n  cheat.update\n\n' cmd/cheat/docopt.txt
       make build
       cp dist/cheat ${SNAPCRAFT_PART_INSTALL}/bin/
 
