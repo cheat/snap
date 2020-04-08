@@ -1,5 +1,5 @@
 name: cheat
-version: 'v3.8.0.build.5'
+version: 'v3.9.0.build.0'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -28,6 +28,11 @@ apps:
       - home
       - network
       - avahi-observe
+      - interface: personal-files
+          read:
+          - $HOME/.config/cheat
+          write:
+          - $HOME/.config/cheat   
     environment:
       HOME: "$SNAP_USER_COMMON"
 
@@ -83,7 +88,7 @@ parts:
     plugin: autotools
 
   nano:
-    source: https://www.nano-editor.org/dist/latest/nano-4.9.tar.gz
+    source: https://www.nano-editor.org/dist/latest/nano-4.9.2.tar.gz
     source-type: tar
     plugin: autotools
     build-packages:
