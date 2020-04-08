@@ -28,11 +28,6 @@ apps:
       - home
       - network
       - avahi-observe
-      - interface: personal-files
-          read:
-          - $HOME/.config/cheat
-          write:
-          - $HOME/.config/cheat   
     environment:
       HOME: "$SNAP_USER_COMMON"
 
