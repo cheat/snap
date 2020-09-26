@@ -1,5 +1,5 @@
 name: cheat
-version: 'v4.1.0.build.0'
+version: 'v4.1.0.build.1'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -11,7 +11,7 @@ description: |
 
 grade: stable
 confinement: strict
-base: core18
+base: core20
 
 layout:
   /usr/share/cheat:
@@ -23,7 +23,7 @@ layout:
 
 apps:
   cheat:
-    command: cheat
+    command: usr/local/bin/cheat
     plugs:
       - home
       - network
@@ -32,16 +32,16 @@ apps:
       HOME: "$SNAP_USER_COMMON"
 
   vi:
-    command: vim
+    command: usr/local/bin/vim
 
   vim:
-    command: vim
+    command: usr/local/bin/vim
 
   nano:
-    command: nano
+    command: usr/local/bin/nano
 
   update:
-    command: update
+    command: usr/local/bin/update
     plugs:
       - network
       - avahi-observe
@@ -49,23 +49,23 @@ apps:
 parts:
   cheat:
     plugin: go
-    go-importpath: github.com/cheat/cheat
     source: https://github.com/cheat/cheat
     source-type: git
     build-packages:
       - pandoc
+      - make
     stage-packages:
       - git
     override-build: |
       export GOPATH=$(realpath ../go)
-      mkdir -p ${SNAPCRAFT_PART_INSTALL}/bin/
+      mkdir -p ${SNAPCRAFT_PART_INSTALL}/usr/local/bin/
       cd ${SNAPCRAFT_PART_SRC}
       # atm snap version does not support https
       sed -i 's/https:\/\/github.com/git:\/\/github.com/g' internal/installer/clone.go
       # adding some customized documentation (until https://github.com/cheat/cheat/issues/552 is resolved)
       sed -i '3aUpdate community cheatsheets via:\n  cheat.update\n\n' cmd/cheat/docopt.txt
       make build
-      cp dist/cheat ${SNAPCRAFT_PART_INSTALL}/bin/
+      cp dist/cheat ${SNAPCRAFT_PART_INSTALL}/usr/local/bin/
 
       # nessesary for working git
       mkdir -p $SNAPCRAFT_PRIME/usr/share/git-core/templates
@@ -75,7 +75,7 @@ parts:
     source: scripts/git
     source-type: local
     organize:
-      "*": bin/
+      "*": usr/local/bin/
 
   vim:
     source: https://github.com/vim/vim.git
