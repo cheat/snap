@@ -13,17 +13,46 @@
 ## Install
 
     $ snap install cheat
-    $ cheat.cheatsheet-setup
 
 ### Get testing version
 
-    $ snap install --channel=[candidate|beta|edge] cheat 
+    $ snap install --channel=edge cheat 
 
-    $ snap refresh --channel=[candidate|beta|edge] cheat
+    $ snap refresh --channel=edge cheat
+
+## Cheatsheets
+
+Community cheatsheets come from a [cheatsheet repository](https://github.com/cheat/cheatsheets) and are installed on first start.  
+These cheatsheets are read only, but can be updated calling: `$ cheat.update`.  
+They go into:
+
+    $HOME/snap/cheat/common/.config/cheat/cheatsheets/community
+
+### Update
+
+To update community cheatsheets call:
+
+    $ cheat.update
+
+### Personal sheets
+
+You can create your own cheatsheets via `cheat -e foo`
+They go into:
+
+    $HOME/snap/cheat/common/.config/cheat/cheatsheets/personal
+
+## Configuration
+
+The config for cheat is stored here:
+
+    $HOME/snap/cheat/common/.config/cheat/conf.yml  
+  
+
+
 
 ## Buildstatus
 
-[![Snap Status](https://build.snapcraft.io/badge/cheat/snap.svg)](https://build.snapcraft.io/user/cheat/snap)
+[![cheat](https://snapcraft.io/cheat/badge.svg)](https://snapcraft.io/cheat)
 
 ### Test latest build
 
@@ -36,6 +65,7 @@
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
 ## How to use it
+
 [See upstream README](https://github.com/cheat/cheat#example)
 
 
