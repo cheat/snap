@@ -1,5 +1,5 @@
 name: cheat
-version: 'v4.2.0.build.2'
+version: 'v4.2.0.build.3'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -57,10 +57,17 @@ parts:
       export GOPATH=$(realpath ../go)
       mkdir -p ${SNAPCRAFT_PART_INSTALL}/usr/local/bin/
       cd ${SNAPCRAFT_PART_SRC}
+
+      # customize cheat help:
+      ## drop lines containing config as this is different in snap version
+      sed -i '/config/d' cmd/cheat/docopt.txt
+      ## adding some documentation for updating community cheatsheets
+      sed -i '3aUpdate community cheatsheets via:\n  cheat.update\n\n' cmd/cheat/docopt.txt
+
       # atm snap version does not support https
       sed -i 's/https:\/\/github.com/git:\/\/github.com/g' internal/installer/clone.go
-      # adding some customized documentation (until https://github.com/cheat/cheat/issues/552 is resolved)
-      sed -i '3aUpdate community cheatsheets via:\n  cheat.update\n\n' cmd/cheat/docopt.txt
+
+      # build cheat
       make build
       cp dist/cheat ${SNAPCRAFT_PART_INSTALL}/usr/local/bin/
 
