@@ -68,6 +68,7 @@ parts:
       sed -i 's/https:\/\/github.com/git:\/\/github.com/g' internal/installer/clone.go
 
       # build cheat
+      make setup
       make build
       cp dist/cheat ${SNAPCRAFT_PART_INSTALL}/usr/local/bin/
 
