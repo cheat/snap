@@ -1,5 +1,5 @@
 name: cheat
-version: 'v4.2.2.build.2'
+version: 'v4.2.3.build.1'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -95,7 +95,7 @@ parts:
       ln -s ../local/bin/vim vim
 
   nano:
-    source: https://www.nano-editor.org/dist/latest/nano-5.8.tar.gz
+    source: https://www.nano-editor.org/dist/latest/nano-5.9.tar.gz
     source-type: tar
     plugin: autotools
     build-packages:
