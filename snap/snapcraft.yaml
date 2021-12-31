@@ -95,7 +95,7 @@ parts:
       ln -s ../local/bin/vim vim
 
   nano:
-    source: https://www.nano-editor.org/dist/latest/nano-5.9.tar.gz
+    source: https://www.nano-editor.org/dist/latest/nano-6.0.tar.gz
     source-type: tar
     plugin: autotools
     build-packages:
