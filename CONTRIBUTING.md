@@ -28,7 +28,7 @@ Test the snapped version (replace buildversion accordingly)
 
 If a PR is pushed into the `master` branch of this repo, a build of the `cheat` snap will be scheduled. 
 Info: The automatic build is added to a build pipeline (with other projects) and will be processed in order.
-You can see the status here: [buildstatus-for-channel-edge](https://github.com/cheat/snap#buildstatus-for-channel-edge)
+You can see the status here: [buildstatus](https://github.com/cheat/snap#buildstatus)
 
 ## new version
 
