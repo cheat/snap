@@ -1,5 +1,5 @@
 name: cheat
-version: 'v4.2.3.build.2'
+version: 'v4.2.3.build.3'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -65,7 +65,7 @@ parts:
       sed -i '3aUpdate community cheatsheets via:\n  cheat.update\n\n' cmd/cheat/docopt.txt
 
       # atm snap version does not support https
-      sed -i 's/https:\/\/github.com/git:\/\/github.com/g' internal/installer/clone.go
+      sed -i 's/https:\/\/github.com/ssh:\/\/github.com/g' internal/installer/clone.go
 
       # temporary fix of error with linter executable
       sed -i 's/\$(LINT)/#\$(LINT)/' Makefile
