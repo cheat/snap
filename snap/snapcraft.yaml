@@ -1,5 +1,5 @@
 name: cheat
-version: 'v4.2.3.build.3'
+version: 'v4.2.3.build.4'
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -20,6 +20,8 @@ layout:
     bind-file: $SNAP/etc/nanorc
   /usr/share/git-core/templates:
     symlink: $SNAP/usr/share/git-core/templates
+  /usr/lib/git-core:
+    symlink: $SNAP/usr/lib/git-core
 
 apps:
   cheat:
@@ -64,9 +66,6 @@ parts:
       ## adding some documentation for updating community cheatsheets
       sed -i '3aUpdate community cheatsheets via:\n  cheat.update\n\n' cmd/cheat/docopt.txt
 
-      # atm snap version does not support https
-      sed -i 's/https:\/\/github.com/ssh:\/\/github.com/g' internal/installer/clone.go
-
       # temporary fix of error with linter executable
       sed -i 's/\$(LINT)/#\$(LINT)/' Makefile
 
@@ -76,6 +75,7 @@ parts:
 
       # nessesary for working git
       mkdir -p $SNAPCRAFT_PRIME/usr/share/git-core/templates
+      mkdir -p $SNAPCRAFT_PRIME/usr/lib/git-core
 
   update:
     plugin: dump
