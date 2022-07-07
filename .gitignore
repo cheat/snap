@@ -3,12 +3,8 @@
 /stage/
 /prime/
 /snapcraft/
-/cheat/
 
+.gitconfig
 *.snap
+**.snapcraft
 
-.snapcraft
-__pycache__
-*.pyc
-*_source.tar.bz2
-snap/.snapcraft
