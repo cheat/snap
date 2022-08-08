@@ -22,6 +22,8 @@ layout:
     symlink: $SNAP/usr/share/git-core/templates
   /usr/lib/git-core:
     symlink: $SNAP/usr/lib/git-core
+  /usr/share/vim/vim90/defaults.vim:
+    symlink: $SNAP/usr/local/share/vim/vim90/defaults.vim
 
 apps:
   cheat:
