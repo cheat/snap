@@ -52,7 +52,7 @@ parts:
     plugin: go
     source: https://github.com/cheat/cheat
     source-type: git
-    go-channel: 1.19/candidate
+    go-channel: 1.19/stable
     build-packages:
       - pandoc
       - make
