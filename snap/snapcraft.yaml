@@ -1,5 +1,5 @@
 name: cheat
-version: 4.2.7.build.1
+version: 4.3.3.build.1
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -49,37 +49,19 @@ apps:
 
 parts:
   cheat:
-    plugin: go
-    source: https://github.com/cheat/cheat
-    source-type: git
-    source-tag: 4.2.7
-    go-channel: 1.19/stable
-    build-packages:
-      - pandoc
-      - make
-    stage-packages:
-      - git
-    override-build: |
-      export GOPATH=$(realpath ../go)
-      mkdir -p ${SNAPCRAFT_PART_INSTALL}/usr/local/bin/
-      cd ${SNAPCRAFT_PART_SRC}
-
-      # customize cheat help:
-      ## drop lines containing config as this is different in snap version
-      sed -i '/config/d' cmd/cheat/docopt.txt
-      ## adding some documentation for updating community cheatsheets
-      sed -i '3aUpdate community cheatsheets via:\n  cheat.update\n\n' cmd/cheat/docopt.txt
-
-      # temporary fix of error with linter executable
-      sed -i 's/\$(LINT)/#\$(LINT)/' Makefile
-
-      # build cheat
-      make build
-      cp dist/cheat ${SNAPCRAFT_PART_INSTALL}/usr/local/bin/
-
-      # nessesary for working git
-      mkdir -p $SNAPCRAFT_PRIME/usr/share/git-core/templates
-      mkdir -p $SNAPCRAFT_PRIME/usr/lib/git-core
+    plugin: dump
+    source:
+      - on amd64: https://github.com/cheat/cheat/releases/download/4.3.3/cheat-linux-amd64.gz
+      - on arm64: https://github.com/cheat/cheat/releases/download/4.3.3/cheat-linux-arm64.gz
+      - on armhf: https://github.com/cheat/cheat/releases/download/4.3.3/cheat-linux-arm7.gz
+    source-type: 7z
+    organize:
+      cheat-linux-amd64: /usr/local/bin/cheat
+      cheat-linux-arm64: /usr/local/bin/cheat
+      cheat-linux-arm7: /usr/local/bin/cheat
+    override-prime: |
+      snapcraftctl prime
+      chmod +x $SNAPCRAFT_PRIME/usr/local/bin/cheat
 
   update:
     plugin: dump
