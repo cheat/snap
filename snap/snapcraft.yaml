@@ -1,5 +1,5 @@
 name: cheat
-version: git
+version: 4.2.7.build.1
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -52,6 +52,7 @@ parts:
     plugin: go
     source: https://github.com/cheat/cheat
     source-type: git
+    source-tag: 4.2.7
     go-channel: 1.19/stable
     build-packages:
       - pandoc
