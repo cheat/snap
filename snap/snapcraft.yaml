@@ -76,6 +76,7 @@ parts:
     plugin: autotools
     override-prime: |
       snapcraftctl prime
+      mkdir -p $SNAPCRAFT_PRIME/usr/bin
       cd $SNAPCRAFT_PRIME/usr/bin
       [ -f vim ] && rm vim || :
       ln -s ../local/bin/vim vim
@@ -93,6 +94,7 @@ parts:
       touch $SNAPCRAFT_PRIME/etc/nanorc
     override-prime: |
       snapcraftctl prime
+      mkdir -p $SNAPCRAFT_PRIME/usr/bin
       cd $SNAPCRAFT_PRIME/usr/bin
       [ -f nano ] && rm nano || :
       ln -s ../local/bin/nano nano
