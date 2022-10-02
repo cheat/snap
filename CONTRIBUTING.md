@@ -14,9 +14,13 @@ In principal it is a good practice to create a snap in a clean environment and t
 * now you can start building your snap version of `cheat` via command `snapcraft`
 ** `snapcraft` will ask you to setup multipass vm for you (which you should do)
 
+### Build snap on Fedora
+
+There are some steps to do before a [build on Fedora works](fedora_fix.sh)
+
 ## Building
 
-see: https://docs.snapcraft.io/debugging-building-snaps/6274
+see: https://snapcraft.io/docs/iterating-over-a-build
 
 ## Testing
 

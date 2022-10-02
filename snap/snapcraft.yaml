@@ -1,5 +1,5 @@
 name: cheat
-version: 4.3.3.build.1
+version: 4.3.3.build.2
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -18,12 +18,6 @@ layout:
     symlink: $SNAP/usr/share/cheat
   /etc/nanorc:
     bind-file: $SNAP/etc/nanorc
-  /usr/share/git-core/templates:
-    symlink: $SNAP/usr/share/git-core/templates
-  /usr/lib/git-core:
-    symlink: $SNAP/usr/lib/git-core
-  /usr/share/vim/vim90/defaults.vim:
-    symlink: $SNAP/usr/local/share/vim/vim90/defaults.vim
 
 apps:
   cheat:
@@ -41,12 +35,6 @@ apps:
   nano:
     command: usr/local/bin/nano
 
-  update:
-    command: usr/local/bin/update
-    plugs:
-      - network
-      - avahi-observe
-
 parts:
   cheat:
     plugin: dump
@@ -62,13 +50,6 @@ parts:
     override-prime: |
       snapcraftctl prime
       chmod +x $SNAPCRAFT_PRIME/usr/local/bin/cheat
-
-  update:
-    plugin: dump
-    source: scripts/git
-    source-type: local
-    organize:
-      "*": usr/local/bin/
 
   vim:
     source: https://github.com/vim/vim.git
