@@ -1,5 +1,5 @@
 name: cheat
-version: 4.3.3.build.2
+version: 4.3.3.build.3
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -14,8 +14,6 @@ confinement: strict
 base: core20
 
 layout:
-  /usr/share/cheat:
-    symlink: $SNAP/usr/share/cheat
   /etc/nanorc:
     bind-file: $SNAP/etc/nanorc
 
