@@ -1,5 +1,5 @@
 name: cheat
-version: 4.4.0.build.2
+version: 4.4.2.build.0
 summary: cheat allows to create and view interactive cheatsheets on the command-line.
 description: |
   cheat allows you to create and view interactive cheatsheets on the command-line. 
@@ -37,9 +37,9 @@ parts:
   cheat:
     plugin: dump
     source:
-      - on amd64: https://github.com/cheat/cheat/releases/download/4.4.0/cheat-linux-amd64.gz
-      - on arm64: https://github.com/cheat/cheat/releases/download/4.4.0/cheat-linux-arm64.gz
-      - on armhf: https://github.com/cheat/cheat/releases/download/4.4.0/cheat-linux-arm7.gz
+      - on amd64: https://github.com/cheat/cheat/releases/download/4.4.2/cheat-linux-amd64.gz
+      - on arm64: https://github.com/cheat/cheat/releases/download/4.4.2/cheat-linux-arm64.gz
+      - on armhf: https://github.com/cheat/cheat/releases/download/4.4.2/cheat-linux-arm7.gz
     source-type: 7z
     organize:
       cheat-linux-amd64: /usr/local/bin/cheat
@@ -61,7 +61,7 @@ parts:
       ln -s ../local/bin/vim vim
 
   nano:
-    source: https://www.nano-editor.org/dist/latest/nano-7.1.tar.gz
+    source: https://www.nano-editor.org/dist/latest/nano-7.2.tar.gz
     source-type: tar
     plugin: autotools
     build-packages:
